@@ -17,14 +17,42 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
-      - name: Slack Notify
-        uses: rtCamp/action-slack-notify@v2.0.1
+      - name: action-slack
+        uses: 8398a7/action-slack@v2.7.0
+        with:
+          status: custom
+          payload: |
+            {
+              text: "A new exception has been detected",
+              attachments: [{
+                "author_name": "Application Insights", // json
+                fallback: 'fallback',
+                color: 'bad',
+                title: 'Exception Type',
+                text: 'Succeeded',
+                fields: [{
+                  title: 'Exception Type',
+                  value: 'System.InvalidOperationException',
+                  short: true
+                },
+                {
+                  title: 'Method',
+                  value: 'System.Web.Mvc.RedirectToRouteResult.ExecuteResult',
+                  short: true
+                },
+                {
+                  title: 'Message',
+                  value: 'No route in the route table matches the supplied values.',
+                  short: false
+                },
+                {
+                  title: 'Assembly',
+                  value: 'System.Web.Mvc, Version=5.2.3.9, Culture=neutral,PublicKeyToken=31bf3856ad364e35'
+                }],
+                actions: [{
+                }]
+              }]
+            }
         env:
-          SLACK_CHANNEL: foo
-          SLACK_COLOR: '#3278BD'
-          SLACK_ICON: https://connectoricons-prod.azureedge.net/applicationinsights/icon_1.0.1316.1923.png
-          SLACK_MESSAGE: "The time was ${{ steps.hello.outputs.time }}"
-          SLACK_TITLE: "A new exception has been detected in ..."
-          SLACK_USERNAME: 'Application Insights'
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
 
