@@ -5,4 +5,4 @@ FROM docker.pkg.github.com/marcuslindblom/application-insights-alerts/applicatio
 #COPY entrypoint.sh /entrypoint.sh
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/app/entrypoint.sh"]
+# ENTRYPOINT ["/app/entrypoint.sh"]
