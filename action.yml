@@ -1,11 +1,13 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Alerts'
+description: 'Application Insights Alerts'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  app-id:  # id of input
+    description: 'The Application ID'
     required: true
-    default: 'World'
+  api-key:
+    description: 'The API key'
+    required: true
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -13,4 +15,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.app-id }}
+    - ${{ inputs.api-key }}

@@ -2,7 +2,9 @@
 
 ## Usage
 
-`dotnet run -- "exceptions | where outerType startswith 'System.' | count" "PT1H"`
+`dotnet run -- appid apikey query timespan "exceptions | where outerType startswith 'System.' | count" "PT1H"`
+
+`dotnet run -- "appid" "exceptions | where outerType startswith 'System.' | count" "PT1H"`
 
 ## Docker
 
