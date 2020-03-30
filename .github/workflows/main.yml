@@ -25,7 +25,7 @@ jobs:
             {
               text: "A new exception has been detected",
               attachments: [{
-                "author_name": "Application Insights", // json
+                "author_name": "Application Insights",
                 fallback: 'fallback',
                 color: 'bad',
                 title: 'Exception Type',
