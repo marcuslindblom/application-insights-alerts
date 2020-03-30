@@ -1,9 +1,9 @@
 #!/bin/sh -l
 
-output=$(dotnet application-insights-alerts.dll $1 $2 "$3" $4)
+# output=$(dotnet application-insights-alerts.dll $1 $2 "$3" $4)
 
-pwd
+# echo "::set-output name=time::$output"
 
-ls
-
-echo "::set-output name=time::$output"
+echo "Hello $1 $2 $3 $4"
+time=$(date)
+echo "::set-output name=time::$time"
