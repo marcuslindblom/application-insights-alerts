@@ -47,12 +47,13 @@ jobs:
                 },
                 {
                   title: 'Assembly',
-                  value: 'System.Web.Mvc, Version=5.2.3.9, Culture=neutral,PublicKeyToken=31bf3856ad364e35'
+                  value: 'System.Web.Mvc, Version=5.2.3.9, Culture=neutral, PublicKeyToken=31bf3856ad364e35',
+                  short: false
                 }],
                 actions: [{
                 }]
               }]
             }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
