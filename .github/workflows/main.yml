@@ -23,31 +23,26 @@ jobs:
           status: custom
           custom_payload: |
             {
-              text: "A new exception has been detected",
+              text: "Custom Field Check",
               attachments: [{
-                "author_name": "Application Insights",
+                "author_name": "8398a7@action-slack", // json
                 fallback: 'fallback',
-                color: 'bad',
-                title: 'Exception Type',
+                color: 'good',
+                title: 'CI Result',
                 text: 'Succeeded',
                 fields: [{
-                  title: 'Exception Type',
-                  value: 'System.InvalidOperationException',
+                  title: 'lower case',
+                  value: 'LOWER CASE CHECK'.toLowerCase(),
                   short: true
                 },
                 {
-                  title: 'Method',
-                  value: 'System.Web.Mvc.RedirectToRouteResult.ExecuteResult',
+                  title: 'reverse',
+                  value: 'gnirts esrever'.split('').reverse().join(''),
                   short: true
                 },
                 {
-                  title: 'Message',
-                  value: 'No route in the route table matches the supplied values.',
-                  short: false
-                },
-                {
-                  title: 'Assembly',
-                  value: 'System.Web.Mvc, Version=5.2.3.9, Culture=neutral, PublicKeyToken=31bf3856ad364e35',
+                  title: 'long title1',
+                  value: 'long value1',
                   short: false
                 }],
                 actions: [{
