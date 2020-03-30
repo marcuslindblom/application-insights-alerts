@@ -8,6 +8,13 @@ inputs:
   api-key:
     description: 'The API key'
     required: true
+  query:
+    description: 'The Analytics query'
+    required: true
+  timespan:
+    description: 'The timespan over which to query data'
+    required: false
+    default: PT1H
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -17,3 +24,5 @@ runs:
   args:
     - ${{ inputs.app-id }}
     - ${{ inputs.api-key }}
+    - ${{ inputs.query }}
+    - ${{ inputs.timespan }}

@@ -1,5 +1,5 @@
 #!/bin/sh -l
 
-echo "Hello $1 $2"
-time=$(date)
-echo "::set-output name=time::$time"
+output=$(dotnet run -- $1 $2 "$3" $4)
+
+echo "::set-output name=time::$output"
