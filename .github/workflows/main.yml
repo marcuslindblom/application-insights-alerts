@@ -20,4 +20,4 @@ jobs:
           timespan: "PT1H" #default PT1H
       # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+        run: echo "The timestamp was ${{ steps.hello.outputs.timestamp }}"
