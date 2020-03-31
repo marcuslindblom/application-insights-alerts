@@ -26,7 +26,7 @@ jobs:
         with:
           payload: |
             {
-              "text": ":boom: Since last run we have detected ${{ steps.ai.outputs.count }} new exceptions on ",
+              "text": ":boom: Since last run we have detected ${{ steps.ai.outputs.count }} new exceptions",
               "attachments": [{
                 "title": "Last error",
                 "fields": [
