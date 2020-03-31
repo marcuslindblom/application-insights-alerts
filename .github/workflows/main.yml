@@ -23,7 +23,7 @@ jobs:
             | where outerType startswith "System."
             | where outerMessage !contains ".txt"
             | where outerMessage !contains "was not found or does not implement IController."
-          timespan: "PT12H" #default PT1H
+          timespan: "PT59M" #default PT1H
       - name: Notify
         if: success()
         uses: k0kubun/action-slack@v1.0.0
