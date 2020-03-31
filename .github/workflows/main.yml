@@ -25,7 +25,7 @@ jobs:
             | where outerMessage !contains "was not found or does not implement IController."
           timespan: "PT59M" #default PT1H
       - name: Notify
-        if: success()
+        if: steps.ai.outputs.count > 0
         uses: k0kubun/action-slack@v1.0.0
         with:
           payload: |
