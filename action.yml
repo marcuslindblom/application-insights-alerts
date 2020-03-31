@@ -16,16 +16,18 @@ inputs:
     required: false
     default: PT1H
 outputs:
-  timestamp: # id of output
+  timestamp:
     description: 'Time'
-  exceptionType: # id of output
+  exceptionType:
     description: 'Type'
-  method: # id of output
+  method:
     description: 'Method'
-  message: # id of output
+  message:
     description: 'Message'
-  assembly: # id of output
+  assembly:
     description: 'Assembly'
+  count:
+    description: 'Exception count'
 runs:
   using: 'docker'
   image: 'Dockerfile'
