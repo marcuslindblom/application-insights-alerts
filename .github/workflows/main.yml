@@ -18,7 +18,7 @@ jobs:
         with:
           app-id: ${{ secrets.APPLICATION_ID }}
           api-key: ${{ secrets.API_KEY }}
-          query: exceptions | where outerType startswith "System." | where outerMessage !contains ".txt" | where outerMessage !contains "was not found or does not implement IController."
+          query: exceptions | where outerType startswith "System."
           timespan: "PT1H" #default PT1H
       - name: Notify
         if: success()
