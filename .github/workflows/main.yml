@@ -19,5 +19,22 @@ jobs:
           query: "exceptions | take 1"
           timespan: "PT1H" #default PT1H
       # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The timestamp was ${{ steps.hello.outputs.timestamp }}"
+      - name: Notify
+        uses: k0kubun/action-slack@v1.0.0
+        with:
+          payload: |
+            {
+              "attachments": [{
+                "title": "A new exception has been detected in dev app",
+                "title_link": "title link",
+                "text": "text",
+                "fields": [{ "value": "field", "short": false }],
+                "footer": "footer",
+                "color": "danger"
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+
+      # - name: Get the output time
+      #   run: echo "The timestamp was ${{ steps.hello.outputs.timestamp }}"
