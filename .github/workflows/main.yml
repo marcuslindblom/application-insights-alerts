@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/59 * * * *'
 
 jobs:
   ai_job:
@@ -19,7 +19,7 @@ jobs:
           app-id: ${{ secrets.APPLICATION_ID }}
           api-key: ${{ secrets.API_KEY }}
           query: exceptions | where outerType startswith "System."
-          timespan: "PT1H" #default PT1H
+          timespan: "PT59M" #default PT1H
       - name: Notify
         if: success()
         uses: k0kubun/action-slack@v1.0.0
