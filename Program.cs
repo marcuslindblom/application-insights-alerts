@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace ApplicationInsightsAlerts
 {
@@ -30,7 +31,7 @@ namespace ApplicationInsightsAlerts
                             }
                         }
                     }
-                    Console.WriteLine(JsonConvert.SerializeObject( output, Formatting.Indented ));
+                    Console.WriteLine(JsonConvert.SerializeObject( output, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() } ));
                 }
                 else
                 {
