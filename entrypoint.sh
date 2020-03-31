@@ -1,8 +1,8 @@
 #!/bin/sh -l
 
-# output=`dotnet /app/application-insights-alerts.dll $1 $2 "$3" $4`
+output=`dotnet /app/application-insights-alerts.dll $1 $2 "$3" $4`
 
-output=`cat test.json`
+# output=`cat test.json`
 
 #count=`echo $output | jq '. | length'`
 
