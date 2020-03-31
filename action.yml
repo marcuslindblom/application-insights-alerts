@@ -2,7 +2,7 @@
 name: 'Alerts'
 description: 'Application Insights Alerts'
 inputs:
-  app-id:  # id of input
+  app-id:
     description: 'The Application ID'
     required: true
   api-key:
