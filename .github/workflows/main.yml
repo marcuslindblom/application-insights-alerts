@@ -18,9 +18,10 @@ jobs:
         with:
           app-id: ${{ secrets.APPLICATION_ID }}
           api-key: ${{ secrets.API_KEY }}
-          query: "exceptions | take 1"
-          timespan: "PT5M" #default PT1H
+          query: "exceptions"
+          timespan: "PT1H" #default PT1H
       - name: Notify
+        if: success()
         uses: k0kubun/action-slack@v1.0.0
         with:
           payload: |
